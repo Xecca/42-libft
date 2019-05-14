@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aponomar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 15:48:57 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/14 16:08:43 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/14 16:00:45 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/14 16:07:46 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen(char *str)
+void	ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (*str)
+		write(1, str++, 1);
 }

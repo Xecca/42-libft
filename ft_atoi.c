@@ -6,9 +6,11 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 20:18:59 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/14 15:16:56 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/14 16:07:09 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {
