@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aponomar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/29 20:08:41 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/20 21:55:23 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/20 20:24:27 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/20 22:25:17 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+int		ft_isalnum(int c)
 {
-	return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
