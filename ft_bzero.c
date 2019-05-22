@@ -6,26 +6,25 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 16:36:15 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/21 16:53:18 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/21 21:21:27 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void    bzero(void *s, size_t n)
+void				ft_bzero(void *s, size_t n)
 {
-    int i;
+	unsigned char	*str;
+	int				i;
 
-    i = 0;
-    if (n == 0 || ft_strlen(s) == 0)
-        return (0);
-    else
-        while (s != '\0')
-        {
-        if (s[i] == '0')
-            write(1, s[i++], 1);
-        else
-            i++;        
-        }
-
+	if (s != NULL)
+	{
+		str = (unsigned char*)s;
+		i = 0;
+		while (i < n)
+		{
+			str[i] = '\0';
+			i++;
+		}
+	}
 }
