@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:38:46 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/21 22:36:10 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/20 22:42:03 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/22 10:37:44 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+int 	ft_isprint(int c)
 {
-
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
