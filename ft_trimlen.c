@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_trimlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:41:07 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 19:42:45 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/23 17:30:50 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/23 17:31:11 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t	ft_trimlen(const char *s)
 {
-	unsigned char *str;
+	size_t	space_counter;
+	size_t	i;
 
-	str = (unsigned char*)s;
-	while (n--)
+	space_counter = 0;
+	i = 0;
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i] != '\0')
 	{
-		if (*str == (unsigned char)c)
-			return (str);
-		str++;
+		space_counter++;
+		i++;
 	}
-	return (NULL);
+	while (s[i] != '\0')
+		i++;
+	if (space_counter != i)
+		i--;
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && i > 0)
+	{
+		space_counter++;
+		i--;
+	}
+	return (ft_strlen(s) - space_counter);
 }

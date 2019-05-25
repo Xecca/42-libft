@@ -6,11 +6,11 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 22:42:03 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 10:37:44 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/22 19:45:57 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

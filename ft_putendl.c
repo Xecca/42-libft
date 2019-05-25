@@ -6,7 +6,21 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:49:49 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/21 18:49:50 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/22 19:01:33 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putendl(char const *s)
+{
+	if (s != NULL)
+	{
+		while (*s != '\0')
+		{
+			ft_putchar(*s);
+			s++;
+		}
+		ft_putchar('\n');
+	}
+}

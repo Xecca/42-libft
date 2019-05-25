@@ -6,7 +6,19 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:44:42 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/21 18:44:43 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/22 18:58:35 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	*ft_memalloc(size_t size)
+{
+	char	*str;
+
+	str = (char*)malloc(sizeof(int) * size);
+	if (str == NULL)
+		return (NULL);
+	ft_bzero(str, size);
+	return (str);
+}

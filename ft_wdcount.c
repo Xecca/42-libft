@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_wdcount.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:41:07 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 19:42:45 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/23 13:04:50 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/23 13:05:03 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_wdcount(char const *s, char c)
 {
-	unsigned char *str;
+	int	w;
 
-	str = (unsigned char*)s;
-	while (n--)
+	w = 0;
+	while (*s != '\0')
 	{
-		if (*str == (unsigned char)c)
-			return (str);
-		str++;
+		if (*s != c)
+		{
+			while (*s != c && *s != '\0')
+				s++;
+			w++;
+		}
+		if (*s != '\0')
+			s++;
 	}
-	return (NULL);
+	return (w);
 }

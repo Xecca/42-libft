@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_malloclen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:50:34 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 20:25:48 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/23 17:33:13 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/23 17:33:17 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *str, int fd)
+char	*ft_malloclen(const char *s)
 {
-	if (str != NULL)
+	char	*str;
+	size_t	i;
+	size_t	j;
+	size_t	malloc_len;
+
+	malloc_len = ft_trimlen(s);
+	str = (char*)malloc((malloc_len) + 1);
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	if ((ft_strlen(s) - malloc_len) > 0)
 	{
-		while (*str)
+		while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i] != '\0')
+			i++;
+		j = 0;
+		while (malloc_len > 0)
 		{
-			ft_putchar_fd(*str, fd);
-			str++;
+			str[j] = s[i];
+			malloc_len--;
+			j++;
+			i++;
 		}
+		str[j] = '\0';
 	}
+	return (str);
 }

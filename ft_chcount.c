@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_chcount.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:41:07 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 19:42:45 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/23 18:01:04 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/23 18:01:09 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_chcount(char const *s, char c)
 {
-	unsigned char *str;
+	int		char_counter;
 
-	str = (unsigned char*)s;
-	while (n--)
+	char_counter = 0;
+	while (*s != '\0')
 	{
-		if (*str == (unsigned char)c)
-			return (str);
-		str++;
+		while (*s != c && *s != '\0')
+		{
+			char_counter++;
+			s++;
+			if (*s == c)
+				return (char_counter);
+		}
+		if (*s != '\0')
+			s++;
 	}
-	return (NULL);
+	return (char_counter);
 }

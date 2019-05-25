@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strldup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aponomar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:41:07 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 19:42:45 by aponomar         ###   ########.fr       */
+/*   Created: 2019/05/22 19:13:53 by aponomar          #+#    #+#             */
+/*   Updated: 2019/05/22 19:13:59 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_strldup(void const *s, size_t l)
 {
-	unsigned char *str;
+	void	*result;
+	size_t	i;
 
-	str = (unsigned char*)s;
-	while (n--)
+	result = malloc(l);
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (l--)
 	{
-		if (*str == (unsigned char)c)
-			return (str);
-		str++;
+		((char*)result)[i] = ((char*)s)[i];
+		i++;
 	}
-	return (NULL);
+	return (result);
 }

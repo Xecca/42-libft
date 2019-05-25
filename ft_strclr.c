@@ -6,7 +6,18 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:45:40 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/21 18:45:41 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/22 19:09:37 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_strclr(char *s)
+{
+	if (s != NULL)
+		while (*s != '\0')
+		{
+			*s = '\0';
+			s++;
+		}
+}

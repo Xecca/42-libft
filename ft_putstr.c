@@ -6,7 +6,7 @@
 /*   By: aponomar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/14 16:00:45 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/14 16:07:46 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/22 19:37:08 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr(char *str)
 {
-	while (*str)
-		write(1, str++, 1);
+	if (str != NULL)
+	{
+		while (*str)
+			write(1, str++, 1);
+	}
 }

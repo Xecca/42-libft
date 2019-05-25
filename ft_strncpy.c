@@ -6,13 +6,13 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/16 11:59:19 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 11:17:51 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/22 20:33:00 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*strncpy(char *dest, const char *src, size_t len)
+char				*ft_strncpy(char *dest, const char *src, size_t len)
 {
 	unsigned int	i;
 

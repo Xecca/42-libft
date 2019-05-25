@@ -6,7 +6,7 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 20:18:59 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/14 16:07:09 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/23 22:18:33 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,28 @@
 
 int		ft_atoi(const char *str)
 {
-	int sign;
-	int num;
+	int	sign;
+	int	nbr;
 
-	num = 0;
 	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13) || *str == '+')
+	nbr = 0;
+	if (!*str)
+		return (0);
+	while (*str == ' ' || *str == '\v'
+			|| *str == '\t' || *str == '\0'
+			|| *str == '\r' || *str == '\n'
+			|| *str == '\f')
 		str++;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
+		if (*str == '-')
+			sign = -1;
 		str++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		num = num * 10 + *str - '0';
+		nbr = 10 * nbr + (*str - 48);
 		str++;
 	}
-	return (sign * num);
+	return (nbr * sign);
 }
