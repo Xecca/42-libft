@@ -6,7 +6,7 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 18:01:04 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/23 18:01:09 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/05/29 22:16:17 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 int		ft_chcount(char const *s, char c)
 {
-	int		char_counter;
+	int	count;
 
-	char_counter = 0;
+	count = 0;
 	while (*s != '\0')
 	{
-		while (*s != c && *s != '\0')
+		if (*s != c)
+			s++;
+		else
 		{
-			char_counter++;
 			s++;
-			if (*s == c)
-				return (char_counter);
+			count++;
 		}
-		if (*s != '\0')
-			s++;
 	}
-	return (char_counter);
+	return (count);
 }
