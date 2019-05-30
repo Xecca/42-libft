@@ -12,24 +12,24 @@
 
 #include "libft.h"
 
-static	int	size(int i)
+static	int	count(int a)
 {
-	int	size;
+	int	count;
 
-	if (i == 0)
+	if (a == 0)
 		return (2);
-	size = 1;
-	if (i < 0)
+	count = 1;
+	if (a < 0)
 	{
-		i *= -1;
-		size++;
+		a = a * -1;
+		count++;
 	}
-	while (i > 0)
+	while (a > 0)
 	{
-		i /= 10;
-		size++;
+		a = a / 10;
+		count++;
 	}
-	return (size);
+	return (count);
 }
 
 char		*ft_itoa(int n)
@@ -40,7 +40,7 @@ char		*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	len = size(n);
+	len = count(n);
 	sign = 0;
 	if (n < 0)
 	{
