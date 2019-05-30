@@ -16,7 +16,7 @@ void	ft_putendl(char const *s)
 {
 	if (s != NULL)
 	{
-		while (*s != '\0')
+		while (*s)
 		{
 			ft_putchar(*s);
 			s++;
