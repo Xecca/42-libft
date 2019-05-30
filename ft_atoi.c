@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	nbr;
+	long long int	sign;
+	long long int	nbr;
 
 	nbr = 0;
 	sign = 1;
@@ -30,7 +30,7 @@ int		ft_atoi(const char *nptr)
 	}
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		nbr = (nbr * 10) + (*nptr - '0');
+		nbr = (nbr * 10) + (long long int)(*nptr - '0');
 		nptr++;
 	}
 	return (nbr * sign);
