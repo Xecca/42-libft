@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:04:50 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/23 13:05:03 by aponomar         ###   ########.fr       */
+/*   Created: 2019/06/03 17:16:39 by aponomar          #+#    #+#             */
+/*   Updated: 2019/06/03 17:17:50 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 int		ft_wdcount(char const *s, char c)
 {
-	int	w;
+	int	wc;
 
-	w = 0;
+	wc = 0;
 	while (*s != '\0')
 	{
-		if (*s != c)
-		{
-			while (*s != c && *s != '\0')
-				s++;
-			w++;
-		}
+		while (*s == c)
+			s++;
 		if (*s != '\0')
+			wc++;
+		while (*s != c && *s != '\0')
 			s++;
 	}
-	return (w);
+	return (wc);
 }
