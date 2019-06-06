@@ -12,24 +12,23 @@
 
 #include "libft.h"
 
-size_t	ft_trimlen(const char *s)
+size_t		ft_trimlen(const char *s)
 {
 	size_t	count;
 	size_t	i;
+	int		trim_len;
 
 	count = 0;
 	i = 0;
-	while (s[i] != '\0')
+	if (ft_strlen(s) == 0)
+		return (0);
+	trim_len = ft_strlen(s) - 1;
+	while (s[i] != '\0' && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		{
-			count++;
-			i++;
-		}
+		count++;
 		i++;
 	}
-	if (count != i)
-		i--;
+	i = trim_len;
 	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && i > 0)
 	{
 		count++;
