@@ -29,6 +29,8 @@ size_t		ft_trimlen(const char *s)
 		i++;
 	}
 	i = trim_len;
+	if (count == ft_strlen(s))
+		return (0);
 	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && i > 0)
 	{
 		count++;
