@@ -15,16 +15,16 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	char	*str_start;
-	size_t	big_len;
+	char	*str_sum;
+	size_t	sum_len;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	big_len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char*)malloc((big_len) + 1);
+	sum_len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char*)malloc((sum_len) + 1);
 	if (str == NULL)
 		return (NULL);
-	str_start = str;
+	str_sum = str;
 	while (*s1 != '\0')
 	{
 		*str = *s1;
@@ -38,5 +38,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s2++;
 	}
 	*str = '\0';
-	return (str_start);
+	return (str_sum);
 }
