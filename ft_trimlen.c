@@ -14,24 +14,26 @@
 
 size_t	ft_trimlen(const char *s)
 {
-	size_t	space_counter;
+	size_t	count;
 	size_t	i;
 
-	space_counter = 0;
+	count = 0;
 	i = 0;
-	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		space_counter++;
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		{
+			count++;
+			i++;
+		}
 		i++;
 	}
-	while (s[i] != '\0')
-		i++;
-	if (space_counter != i)
+	if (count != i)
 		i--;
 	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && i > 0)
 	{
-		space_counter++;
+		count++;
 		i--;
 	}
-	return (ft_strlen(s) - space_counter);
+	return (ft_strlen(s) - count);
 }
