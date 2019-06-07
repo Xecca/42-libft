@@ -14,17 +14,18 @@
 
 void	*ft_strldup(void const *s, size_t l)
 {
-	void	*result;
+	void	*res;
 	size_t	i;
 
-	result = malloc(l);
-	if (result == NULL)
+	res = malloc(l);
+	if (res == NULL)
 		return (NULL);
 	i = 0;
-	while (l--)
+	while (l > 0)
 	{
-		((char*)result)[i] = ((char*)s)[i];
+		((char*)res)[i] = ((char*)s)[i];
 		i++;
+		l--;
 	}
-	return (result);
+	return (res);
 }
