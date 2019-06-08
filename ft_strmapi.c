@@ -6,7 +6,7 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:47:20 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 19:14:51 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/06/08 15:48:14 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = (char*)malloc(len + 1);
 	if (str == NULL)
 		return (NULL);
-	if (s != NULL && f != NULL)
+	while (i < len)
 	{
-		while (i < len)
-		{
-			str[i] = (*f)(i, s[i]);
-			i++;
-		}
-		str[i] = '\0';
+		str[i] = (*f)(i, s[i]);
+		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
