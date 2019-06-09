@@ -14,10 +14,10 @@
 
 char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-	char	*s3;
+	char	*str;
 	size_t	i;
 
-	s3 = s1;
+	str = s1;
 	i = 0;
 	while (*s1 != '\0' && *s1 != '\n')
 		s1++;
@@ -27,5 +27,5 @@ char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 		i++;
 	}
 	*s1 = '\0';
-	return (s3);
+	return (str);
 }
