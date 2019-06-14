@@ -6,7 +6,7 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:52:27 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 18:54:11 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/06/13 23:27:56 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list *node;
-	t_list *t;
+	t_list *new_lst;
+	t_list *swap;
 
 	if (!lst)
 		return (NULL);
-	node = f(lst);
-	t = node;
+	new_lst = f(lst);
+	swap = new_lst;
 	while (lst->next)
 	{
 		lst = lst->next;
-		if (!(node->next = f(lst)))
+		if ((new_lst->next = f(lst)) == NULL)
 		{
-			free(node->next);
+			free(new_lst);
 			return (NULL);
 		}
-		node = node->next;
+		new_lst = new_lst->next;
 	}
-	return (t);
+	return (swap);
 }
+
