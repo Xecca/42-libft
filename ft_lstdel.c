@@ -6,7 +6,7 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:51:48 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 18:47:30 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/06/13 21:57:19 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *swap;
-	t_list *t;
+	t_list *lst;
+	t_list *ch;
 
-	swap = *alst;
-	t = *alst;
-	while (t != NULL)
+	lst = *alst;
+	ch = *alst;
+	while (ch != NULL)
 	{
-		(*del)(swap->content, swap->content_size);
-		swap = t->next;
-		free(t);
-		t = swap;
+		(*del)(lst->content, lst->content_size);
+		lst = ch->next;
+		free(ch);
+		ch = lst;
 	}
 	*alst = NULL;
 }
