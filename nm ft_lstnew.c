@@ -6,29 +6,29 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:51:16 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 18:55:26 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/06/13 21:14:08 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list				*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list *str;
+	t_list	*new_list;
 
-	str = (t_list*)malloc(sizeof(t_list));
-	if (str == NULL)
+	new_list = (t_list*)malloc(sizeof(t_list));
+	if (new_list == NULL)
 		return (NULL);
 	if (content == NULL)
 	{
-		str->content = NULL;
-		str->content_size = 0;
+		new_list->content = NULL;
+		new_list->content_size = 0;
 	}
 	else
 	{
-		str->content = ft_strldup(content, content_size);
-		str->content_size = content_size;
+		new_list->content = ft_strldup(content, content_size);
+		new_list->content_size = content_size;
 	}
-	str->next = NULL;
-	return (str);
+	new_list->next = NULL;
+	return (new_list);
 }
