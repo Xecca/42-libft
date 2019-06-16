@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sfill.c                                         :+:      :+:    :+:   */
+/*   ft_intrevstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:06:27 by aponomar          #+#    #+#             */
-/*   Updated: 2019/06/05 23:02:39 by aponomar         ###   ########.fr       */
+/*   Created: 2019/06/14 20:46:28 by aponomar          #+#    #+#             */
+/*   Updated: 2019/06/14 23:31:01 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_sfill(char const *s, char **str, int wdcount, char c)
+char		*ft_intrevstr(int n, int count, int sign)
 {
-	int	j;
-	int	r;
-	int	ch_count;
+	int		len_n;
+	char	*str;
+	int		i;
 
-	r = 0;
-	while (wdcount--)
+	i = 0;
+	if (sign == -1)
+		n = n * sign;
+	len_n = n;
+	str = (char*)malloc(sizeof(char) * (count + 1));
+	if (str == NULL)
+		return (NULL);
+	while (count + sign > 0)
 	{
-		ch_count = ft_chcount(s, c);
-		while (*s == c)
-			s++;
-		while (ch_count > 0)
-		{
-			j = 0;
-			str[r] = (char*)malloc(ch_count + 1);
-			while (ch_count--)
-			{
-				str[r][j++] = *s;
-				s++;
-			}
-			str[r][j] = '\0';
-			r++;
-		}
+		n = n % 10;
+		len_n = len_n / 10;
+		str[i] = (n + 48);
+		i++;
+		count--;
+		n = len_n;
 	}
-	str[r] = NULL;
+	if (sign == -1)
+		str[i++] = '-';
+	str[i] = '\0';
+	ft_strrev(str);
 	return (str);
 }

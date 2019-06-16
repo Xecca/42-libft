@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sfill.c                                         :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:06:27 by aponomar          #+#    #+#             */
-/*   Updated: 2019/06/05 23:02:39 by aponomar         ###   ########.fr       */
+/*   Created: 2019/06/14 20:00:56 by aponomar          #+#    #+#             */
+/*   Updated: 2019/06/14 22:22:58 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_sfill(char const *s, char **str, int wdcount, char c)
+int		ft_intlen(int n)
 {
-	int	j;
-	int	r;
-	int	ch_count;
+	int		count;
+	int		len_n;
 
-	r = 0;
-	while (wdcount--)
+	count = 0;
+	len_n = n;
+	if (len_n < 0)
 	{
-		ch_count = ft_chcount(s, c);
-		while (*s == c)
-			s++;
-		while (ch_count > 0)
-		{
-			j = 0;
-			str[r] = (char*)malloc(ch_count + 1);
-			while (ch_count--)
-			{
-				str[r][j++] = *s;
-				s++;
-			}
-			str[r][j] = '\0';
-			r++;
-		}
+		len_n = len_n * -1;
+		count++;
 	}
-	str[r] = NULL;
-	return (str);
+	if (len_n == 0)
+	{
+		count++;
+		len_n = 1;
+	}
+	while (len_n > 0)
+	{
+		len_n = len_n / 10;
+		count++;
+	}
+	return (count);
 }

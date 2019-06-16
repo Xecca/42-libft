@@ -6,13 +6,13 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:45:09 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 20:34:46 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/06/08 18:45:56 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char		*ft_strnew(size_t size)
 {
 	char	*str;
 

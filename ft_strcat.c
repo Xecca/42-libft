@@ -6,7 +6,7 @@
 /*   By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 18:41:59 by aponomar          #+#    #+#             */
-/*   Updated: 2019/05/22 19:08:51 by aponomar         ###   ########.fr       */
+/*   Updated: 2019/06/08 17:06:58 by aponomar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	char	*s3;
+	char	*str;
 
-	s3 = s1;
+	str = s1;
 	while (*s1 != '\0')
 		s1++;
 	while (*s2 != '\0')
@@ -26,5 +26,5 @@ char	*ft_strcat(char *restrict s1, const char *restrict s2)
 		s2++;
 	}
 	*s1 = '\0';
-	return (s3);
+	return (str);
 }

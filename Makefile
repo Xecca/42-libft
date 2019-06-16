@@ -6,7 +6,7 @@
 #    By: aponomar <aponomar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/29 16:29:37 by aponomar          #+#    #+#              #
-#    Updated: 2019/05/23 20:48:42 by aponomar         ###   ########.fr        #
+#    Updated: 2019/06/15 21:52:59 by aponomar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS 		:= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit
 	ft_strldup.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c \
 	ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c \
 	ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c ft_trimlen.c \
-	ft_wdcount.c ft_lstiter.c ft_malloclen.c ft_sfill.c ft_chcount.c
+	ft_wdcount.c ft_lstiter.c ft_malloclen.c ft_sfill.c ft_chcount.c ft_strrev.c \
+	ft_intlen.c ft_intrevstr.c
 
 # Source object files.
 OBJECTS		:= ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o \
@@ -37,13 +38,16 @@ OBJECTS		:= ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdig
 	ft_strldup.o ft_strlen.o ft_strmap.o ft_strmapi.o ft_strncat.o ft_strncmp.o \
 	ft_strncpy.o ft_strnequ.o ft_strnew.o ft_strnstr.o ft_strrchr.o ft_strsplit.o \
 	ft_strstr.o ft_strsub.o ft_strtrim.o ft_tolower.o ft_toupper.o ft_trimlen.o \
-	ft_wdcount.o ft_lstiter.o ft_malloclen.o ft_sfill.o ft_chcount.o
+	ft_wdcount.o ft_lstiter.o ft_malloclen.o ft_sfill.o ft_chcount.o ft_strrev.o \
+	ft_intlen.o ft_intrevstr.o
 
 # Files directory.
 INCLUDES 	:= ./
 
-all: $(NAME)
+norm:
+	norminette -R CheckForbiddenSourceHeader
 
+all: $(NAME)
 $(NAME):
 	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
 	ar -rc $(NAME) $(OBJECTS)
