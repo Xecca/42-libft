@@ -44,9 +44,6 @@ OBJECTS		:= ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdig
 # Files directory.
 INCLUDES 	:= ./
 
-norm:
-	norminette -R CheckForbiddenSourceHeader
-
 all: $(NAME)
 $(NAME):
 	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
